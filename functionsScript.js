@@ -24,6 +24,7 @@ function commonelement(arr1,arr2){
 }
 
 function removeDupl(arr) {
+    
     return arr.filter((item, index) => arr.indexOf(item) === index);
 }
 
