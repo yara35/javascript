@@ -1,0 +1,5 @@
+console.log(toPascalCase('the quick brown fox'))
+console.log(longest_word('Web Development Tutorial'))
+console.log(alphabeticalOrder("javascript"))
+console.log(commonelement([1, 2, 3],[2,3,4]))
+console.log(removeDupl([2,2,5,5,4]))
