@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab 5 - Student Form & Slideshow</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    table, th, td { border: 1px solid black; border-collapse: collapse; padding: 8px; }
+    #span { color: red; display: none; }
+    img { width: 300px; height: 200px; display: block; margin: 10px 0; }
+    .Dep{display:flex;
+        flex-direction: column; }
+  </style>
+</head>
+<body>
+  <h2>Slideshow</h2>
+  <img src="images/1.jpg" id="slideshowImg" />
+  <button id="leftBtn">Previous</button>
+  <button id="rightBtn">Next</button>
+  <button id="startBtn">Slide show</button>
+  <button id="stopBtn">Stop</button>
+
+  <hr />
+
+  <h2>Student Form</h2>
+  <form onsubmit="return false;">
+    <div class="Dep">
+        <h3>Departments</h3>
+        <label>
+          <input type="radio" name="department" value="SD" checked /> SD
+        </label>
+        <label>
+          <input type="radio" name="department" value="OS" /> OS
+        </label>
+        <label>
+          <input type="radio" name="department" value="EL" /> EL
+        </label>
+    </div>
+  <br />
+    
+    <input type="text" name="form" placeholder="Student Name" />
+    <input type="text" name="form" placeholder="Student Grade" />
+    <button type="button" id="btn">Add Student</button>
+    <span id="span"></span>
+  </form>
+
+  <br />
+
+  <label for="filter">Filter:</label>
+  <select id="filter">
+    <option value="all">All</option>
+    <option value="passed">Passed</option>
+    <option value="failed">Failed</option>
+  </select>
+
+  <label for="sort">Sort:</label>
+  <select id="sort">
+    <option value="">-- Select --</option>
+    <option value="name">By Name</option>
+    <option value="grade">By Grade</option>
+  </select>
+
+  <br /><br />
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Grade</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+<script src="jscript.js"></script>
+</body>
+</html>
