@@ -51,12 +51,21 @@ let students = [];
 
     TableCalling();
     }
+
     function TableCalling(data = students) {
         const tbody = table.tBodies[0];
         while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
       
         data.forEach((student, index) => {
           let tr = document.createElement("tr");
+
+          if (student.grade < 60) {
+            tr.className = "low";
+          } else if (student.grade <= 75) {
+            tr.className = "mid";
+          } else {
+            tr.className = "high";
+          }
       
           let tdName = document.createElement("td");
           tdName.innerText = student.name;
@@ -119,13 +128,16 @@ let students = [];
     };
 
     document.getElementById("startBtn").onclick = () => {
-      slideInterval = setInterval(() => {
-        count++;
-        if (count > 3) count = 1;
-        img.src = `images/${count}.jpg`;
-      }, 1500);
+      if (slideInterval === null){
+        slideInterval = setInterval(() => {
+          count++;
+          if (count > 3) count = 1;
+          img.src = `images/${count}.jpg`;
+        }, 1500);
+      }
     };
 
     document.getElementById("stopBtn").onclick = () => {
       clearInterval(slideInterval);
+      slideInterval = null;
     };
