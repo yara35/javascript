@@ -31,17 +31,16 @@ class Car extends Engine{
     };
     moveLeft(){
         if(this.left > 0){
-            this.Left -= this.space;
-            this.left = this.left;
-        }
+            this.Left -= this.space;        }
+        this.car.style.left = this.left + "px";
     };
     moveRight(){
         let roadwidth = document.getElementById("road").clientWidth;
         let carwidth = this.car.clientWidth;
         if(this.left + carwidth < roadwidth ){
             this.left += this.space;
-            this.left = this.left;
         }
+        this.car.style.left = this.left + "px";
     };
     ChangeStyle(styleobj){
         Object.assign(this.car.style, styleobj)
